@@ -1,0 +1,6 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+	<text>pages/home/home.wxml</text>
+	<view>这里是首页6666</view>
+</view>
+
