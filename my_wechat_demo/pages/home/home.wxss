@@ -1,1 +1,9 @@
 /* pages/home/home.wxss */
+.container_wrap {
+    text-align: center;
+    padding: 20rpx 30rpx;
+}
+
+.title {
+    display: block;
+}
