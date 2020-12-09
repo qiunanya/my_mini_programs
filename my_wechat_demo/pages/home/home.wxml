@@ -1,6 +1,7 @@
 <!--pages/home/home.wxml-->
 <view class="container">
 	<text>pages/home/home.wxml</text>
-	<view>这里是首页6666</view>
+	<view>{{name}}</view>
+	<view wx:for="{{students}}">姓名：{{item.name}} 年龄：{{item.age}}</view>
 </view>
 
