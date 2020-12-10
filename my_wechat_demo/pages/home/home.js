@@ -52,6 +52,11 @@ Page({
             complete: (res) => {console.log('结束刷新')},
           })
     },
+    /**
+     * @description 点击获取用户权限
+     * @param {@} options 
+     */
+    getUserInfos () { },
     
   /**
    * 生命周期函数--监听页面加载

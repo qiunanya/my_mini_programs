@@ -1,14 +1,21 @@
 <!-- pages/home/home.wxml -->
 <view class="container_wrap">
-    <text>pages/home/home.wxml</text>
-    <button type="primary">数据绑定</button>
-    <view>{{name}}</view>
-    <button type="primary">列表循环：</button>
-    <view wx:for="{{students}}" wx:key="index">姓名：{{item.name}} 年龄：{{item.age}}</view>
-    <button type="primary">事件绑定：</button>
-    <text>{{msg}} 计数值：{{count}}</text>
-    <button type="primary" bindtap="clickAddOne">+</button>
-    <button type="warn" bindtap="clickReduceOne">-</button>
-    <button type="primary" bindtap="startRefresh" style="margin-bottom:30rpx;">开始刷新</button>
-    <button type="primary" bindtap="stopRefresh">结束刷新</button>
+	<text>pages/home/home.wxml</text>
+	<button type="primary">数据绑定</button>
+	<view>{{name}}</view>
+	<button type="primary">列表循环：</button>
+	<view wx:for="{{students}}" wx:key="index">姓名：{{item.name}} 年龄：{{item.age}}</view>
+	<button type="primary">事件绑定：</button>
+	<text>{{msg}} 计数值：{{count}}</text>
+	<button type="primary" bindtap="clickAddOne">+</button>
+	<button type="warn" bindtap="clickReduceOne">-</button>
+	<button
+	 type="primary"
+	 bindtap="startRefresh"
+	 style="margin-bottom:30rpx;"
+	>开始刷新
+	</button>
+	<button type="primary" bindtap="stopRefresh">结束刷新</button>
+	<button type="primary" bindtap="getUserInfos">获取用户权限</button>
 </view>
+
