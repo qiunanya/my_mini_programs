@@ -1,2 +1,6 @@
 <!--pages/category/category.wxml-->
 <text>pages/category/category.wxml</text>
+<!-- 使用iview weapp 样式库进行开发 样式库已上传到git-->
+<button type="primary" size="mini">搜索框</button>
+<i-button type="primary" bind:click="handleClick">这是一个按钮</i-button>
+
