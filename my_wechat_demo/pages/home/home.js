@@ -1,6 +1,9 @@
 // pages/home/home.js
+// getApp获取APP()产生的示例对象
+const app = getApp()
+let { name, age } = app.globalData
+console.log('全局属性', name, age);
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -16,8 +19,8 @@ Page({
             { id: 2, name: '汤姆森', age: '22' },
             { id: 3, name: '保罗', age: '36' }
         ],
-        count:0
-        
+        count:0,
+        globalName: name
     },
     /**
      * @description 点击加 1
@@ -56,7 +59,9 @@ Page({
      * @description 点击获取用户权限
      * @param {@} options 
      */
-    getUserInfos () { },
+    handleGetUserInfos (event) {
+        console.log(event);
+     },
     
   /**
    * 生命周期函数--监听页面加载
@@ -97,14 +102,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('全局刷新了')
+    console.log('下拉刷新')
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log('页面到底部，可以用于上拉加载更多')
   },
 
   /**

@@ -1,2 +1,26 @@
 <!--pages/mine/mine.wxml-->
 <text>pages/mine/mine.wxml</text>
+<view style="color:red;">利用小程序内置属性标签展示用户信息</view>
+<view> 用户昵称：
+	<open-data type="userNickName" />
+</view>
+<view style="width:200rpx;height:200rpx;"> 用户头像：
+	<open-data type="userAvatarUrl" />
+</view>
+<view> 用户用户性别：
+	<open-data type="userGender" />
+</view>
+
+<view> 用户拉取群名称：
+	<open-data type="groupName" />
+</view>
+<view> 用户所在国家：
+	<open-data type="userCountry" />
+</view>
+<view>用户所在省份：
+	<open-data type="userProvince" />
+</view>
+<view> 用户所在城市：
+	<open-data type="userCity" />
+</view>
+

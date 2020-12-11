@@ -16,6 +16,15 @@
 	>开始刷新
 	</button>
 	<button type="primary" bindtap="stopRefresh">结束刷新</button>
-	<button type="primary" bindtap="getUserInfos">获取用户权限</button>
+
+	<button
+	 type="primary"
+	 open-type="getUserInfo"
+	 bindgetuserinfo="handleGetUserInfos"
+	 style="margin:50rpx auto;"
+	>获取用户权限信息二
+	</button>
+	<button type="primary">app.js全局属性</button>
+	<view> 来自app.js全局属性：{{globalData.name}}</view>
 </view>
 
