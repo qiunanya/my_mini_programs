@@ -15,11 +15,12 @@ const formatNumber = n => {
 }
 
 /**
+ * @since 2020-12-12
  * @description 自定义保留两位小数的方法并导出
  */
-
  const twoDecimal = data => {
     console.log(data, '保留两位小数')
+    return data.toFixed(2)
  }
 
 module.exports = {

@@ -1,7 +1,8 @@
 <!-- pages/home/home.wxml -->
 <!-- 导入自定义模板 -->
 <import src="../../template/template.wxml" />
-<!-- 导入自定义保留两位小数的方法 -->
+<!-- 自定义wxs函数，wxs可以在页面直接调用 -->
+<wxs src="../../wxs/info.wxs" module="info"></wxs>
 <view class="container_wrap">
     <text>pages/home/home.wxml</text>
     <button type="primary">当前时间</button>
@@ -24,4 +25,8 @@
     <!-- 自定义模板 -->
     <button type="primary">自定义模板</button>
     <template is="msgItem" data="{{...item}}" />
+    <button type="primary">js保留两位小数{{ num }}</button>
+    <text>自定义wxs函数，wxs可以在页面直接调用</text>
+    <button type="warn">wxs中msg：{{info.msg}}</button>
+    <button type="primary">wxs中sum求和：{{info.sum(50, 60)}}</button>
 </view>

@@ -1,6 +1,8 @@
 // pages/home/home.js
 // getApp获取APP()产生的示例对象
 const app = getApp()
+// 导入自定义工具js
+const utils = require("../../utils/util.js");
 let { name, age } = app.globalData
 console.log('全局属性', name, age);
 Page({
@@ -26,7 +28,8 @@ Page({
             msg: 'this is a template',
             time: '2020-12-12'
         },
-        currentTime: new Date().toLocaleString()
+        currentTime: new Date().toLocaleString(),
+        num: 2.5555555555
     },
     options: {
         addGlobalClass: true
@@ -76,6 +79,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 使用自定义方法，保留两位小数
+    this.setData({num: utils.twoDecimal(this.data.num)})
     // 赋值动态显示时间
     setInterval(() =>{
         this.setData({

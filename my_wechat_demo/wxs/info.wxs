@@ -1,0 +1,9 @@
+var foo = "'hello world' from tools.wxs";
+var sum = function (x, y) {
+  return x + y;
+}
+module.exports = {
+  foo: foo,
+  sum: sum,
+};
+module.exports.msg = "some msg";
