@@ -20,7 +20,16 @@ Page({
             { id: 3, name: '保罗', age: '36' }
         ],
         count:0,
-        globalName: name
+        globalName: name,
+        item: { //自定义模板数据
+            index: 0,
+            msg: 'this is a template',
+            time: '2020-12-12'
+        },
+        currentTime: new Date().toLocaleString()
+    },
+    options: {
+        addGlobalClass: true
     },
     /**
      * @description 点击加 1
@@ -67,7 +76,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 赋值动态显示时间
+    setInterval(() =>{
+        this.setData({
+            currentTime: new Date().toLocaleString()
+        })
+    }, 1000)
   },
 
   /**

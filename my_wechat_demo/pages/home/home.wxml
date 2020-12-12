@@ -1,32 +1,27 @@
 <!-- pages/home/home.wxml -->
+<!-- 导入自定义模板 -->
+<import src="../../template/template.wxml" />
+<!-- 导入自定义保留两位小数的方法 -->
 <view class="container_wrap">
-	<text>pages/home/home.wxml</text>
-	<button type="primary">数据绑定</button>
-	<view>{{name}}</view>
-	<button type="primary">列表循环：</button>
-	<view wx:for="{{students}}" wx:key="index">姓名：{{item.name}} 年龄：{{item.age}}</view>
-	<button type="primary">事件绑定：</button>
-	<text>{{msg}} 计数值：{{count}}</text>
-	<button type="primary" bindtap="clickAddOne">+
-	</button>
-	<button type="warn" bindtap="clickReduceOne">-
-	</button>
-	<button
-	 type="primary"
-	 bindtap="startRefresh"
-	 style="margin:30rpx auto;"
-	>开始刷新
-	</button>
-	<button type="primary" bindtap="stopRefresh">结束刷新</button>
-
-	<button
-	 type="primary"
-	 open-type="getUserInfo"
-	 bindgetuserinfo="handleGetUserInfos"
-	 style="margin:50rpx auto;"
-	>获取用户权限信息二
-	</button>
-	<button type="primary">app.js全局属性</button>
-	<view> 来自app.js全局属性：{{globalData.name}}</view>
+    <text>pages/home/home.wxml</text>
+    <button type="primary">当前时间</button>
+    <button type="warn">{{currentTime}}</button>
+    <button type="primary">数据绑定</button>
+    <view>{{name}}</view>
+    <button type="primary">列表循环：</button>
+    <view wx:for="{{students}}" wx:key="index">姓名：{{item.name}} 年龄：{{item.age}}</view>
+    <button type="primary">事件绑定：</button>
+    <text>{{msg}} 计数值：{{count}}</text>
+    <button type="primary" bindtap="clickAddOne">+</button>
+    <button type="warn" bindtap="clickReduceOne">-</button>
+    <button type="primary" bindtap="startRefresh" style="margin:30rpx auto;">开始刷新</button>
+    <button type="primary" bindtap="stopRefresh">结束刷新</button>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfos" style="margin:50rpx auto;">
+        获取用户权限信息二
+    </button>
+    <button type="primary">app.js全局属性</button>
+    <view>来自app.js全局属性：{{globalData.name}}</view>
+    <!-- 自定义模板 -->
+    <button type="primary">自定义模板</button>
+    <template is="msgItem" data="{{...item}}" />
 </view>
-

@@ -1,0 +1,4 @@
+/* pages/template/template.wxss */
+.template_bd {
+    background-color: #c6fced;
+}

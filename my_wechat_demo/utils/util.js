@@ -14,6 +14,15 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * @description 自定义保留两位小数的方法并导出
+ */
+
+ const twoDecimal = data => {
+    console.log(data, '保留两位小数')
+ }
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  twoDecimal: twoDecimal
 }

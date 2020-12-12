@@ -1,0 +1,7 @@
+<!-- 自定义模板 -->
+<template name="msgItem">
+    <view class="template_bd">
+        <text>{{index}}: {{msg}}</text>
+        <text>Time: {{time}}</text>
+    </view>
+</template>
