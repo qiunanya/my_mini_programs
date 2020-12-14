@@ -35,6 +35,45 @@ Page({
         addGlobalClass: true
     },
     /**
+     * @description 手指触摸后，超过350ms再离开
+     * @param {*} event 
+     */
+    hanldeLongPress (event) { 
+        wx.showModal({
+            title: '提示',
+            content: event.currentTarget.dataset.str,
+            success (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+    },
+    /**
+     * @description 手指触摸动作开始
+     * @param {@} event 
+     */
+    hanldeTouchStart (event) { 
+        wx.showToast({
+            title: event.currentTarget.dataset.str,
+            icon: 'success',
+            duration: 2000
+        })
+    },
+    /**
+     * @description 手指触摸后马上离开
+     */
+    hanldeTouchTap (event) {
+        console.log(event,55)
+        wx.showToast({
+            title: event.currentTarget.dataset.str,
+            icon: 'success',
+            duration: 2000
+        })
+     },
+    /**
      * @description 点击加 1
      */
     clickAddOne: function() {
