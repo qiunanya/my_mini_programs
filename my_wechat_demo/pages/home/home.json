@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-      "my-component":"../../components/my-component/my-component"
+     
   },
   "enablePullDownRefresh": true
 }

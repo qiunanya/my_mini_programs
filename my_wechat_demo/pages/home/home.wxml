@@ -62,7 +62,7 @@
 	 bind:longpress="hanldeLongPress"
 	>手指触摸后，超过350ms再离开
 	</button>
-	<button style="margin:30rpx auto;">使用自定义组件</button>
+	<button style="margin:30rpx auto;">使用自定义组件,局部注册xxx.json和全局注册app.json</button>
 	<my-component></my-component>
 	<my-component></my-component>
 
