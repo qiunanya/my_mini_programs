@@ -29,10 +29,18 @@ Page({
             time: '2020-12-12'
         },
         currentTime: new Date().toLocaleString(),
-        num: 2.5555555555
+        num: 2.5555555555,
+        counter: 0
     },
     options: {
         addGlobalClass: true
+    },
+    /**
+     * @description 监听子组件传出的事件并赋值
+     */
+    handleAdd(value){
+        console.log('听到了子组件事件',value)
+        this.setData({counter: this.data.counter+1})
     },
     /**
      * @description 手指触摸后，超过350ms再离开

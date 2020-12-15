@@ -1,7 +1,2 @@
-<view class="title">
-	{{title}}
-</view>
-<view class="content">
-	我是自定义组件的内容
-</view>
-
+<view class="title">{{title}}</view>
+<view class="content">{{content}}</view>

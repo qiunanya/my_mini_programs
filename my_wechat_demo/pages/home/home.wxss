@@ -12,3 +12,7 @@
 .template_bd {
     background-color: #c6fced;
 }
+
+.red {
+    color: red;
+}

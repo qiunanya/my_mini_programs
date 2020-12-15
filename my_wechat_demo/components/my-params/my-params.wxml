@@ -1,0 +1,3 @@
+<!-- components/my-pramas/my-params.wxml -->
+<text class="titleclass">{{name}}</text>
+<view wx:for="{{content}}" wx:key="index">{{item.name}}{{index}}</view>

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-     
+     "my-params":"../../components/my-params/my-params",
+     "my-event":"../../components/my-event/my-event"
   },
   "enablePullDownRefresh": true
 }

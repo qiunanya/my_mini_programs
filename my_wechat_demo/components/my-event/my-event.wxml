@@ -1,0 +1,2 @@
+<!-- components/my-event/my-event.wxml -->
+<button type="primary" style="margin:30rpx auto;" bind:tap="addNum">点击 +1</button>
