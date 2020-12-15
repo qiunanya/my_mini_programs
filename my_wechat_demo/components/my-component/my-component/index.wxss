@@ -1,0 +1,9 @@
+.title{
+    font-size: 40rpx;
+    font-weight: bold;
+}
+.content{
+    font-size: 30rpx;
+    color: #4e8d7c;
+    font-weight: bolder;
+}
