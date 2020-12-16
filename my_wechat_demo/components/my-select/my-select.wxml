@@ -1,0 +1,2 @@
+<!-- components/my-select/my-select.wxml -->
+<text>父组件给子组件传值：{{counter}}</text>

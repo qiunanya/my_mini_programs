@@ -60,6 +60,21 @@ Page({
           })
     },
     /**
+     * @description 父组件给子组件传值方法
+     */
+    handleGiveValueToChild(){
+        // 最终目的：修改子组件my-select里的 counter值
+        const myselect = this.selectComponent("#myselect");
+        // 方法一：父组件修改子组件内值
+        // myselect.setData({
+        //    counter: myselect.data.counter + 20
+        // })
+
+        // 方法二：父组件修改子组件内值 incrementCounter在子组件my-select中定义的方法
+        myselect.incrementCounter(10)
+        console.log(myselect,'获取子组件对象')
+    },
+    /**
      * @description 手指触摸动作开始
      * @param {@} event 
      */

@@ -52,4 +52,9 @@
     <button type="primary" style="margin:30rpx auto;">子组件向父组件传递事件</button>
     <text>点击子组件事件会变化的值：{{counter}}</text>
     <my-event bind:add="handleAdd"></my-event>
+    <!-- 父组件给子组件传递参数 -->
+    <button type="primary" style="margin:30rpx auto;" bind:tap="handleGiveValueToChild">
+        点击父组件给子组件传递参数
+    </button>
+    <my-select id="myselect"></my-select>
 </view>
