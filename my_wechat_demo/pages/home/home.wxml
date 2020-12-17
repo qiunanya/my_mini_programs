@@ -4,110 +4,89 @@
 <!-- 自定义wxs函数，wxs可以在页面直接调用 -->
 <wxs src="../../wxs/info.wxs" module="info"></wxs>
 <view class="container_wrap">
-	<text>pages/home/home.wxml</text>
-	<button type="primary">当前时间</button>
-	<button type="warn">{{currentTime}}</button>
-	<button type="primary">数据绑定</button>
-	<view>{{name}}</view>
-	<button type="primary">列表循环：</button>
-	<view wx:for="{{students}}" wx:key="index">姓名：{{item.name}} 年龄：{{item.age}}</view>
-	<button type="primary">事件绑定：</button>
-	<text>{{msg}} 计数值：{{count}}</text>
-	<button type="primary" bindtap="clickAddOne">+</button>
-	<button type="warn" bindtap="clickReduceOne">-</button>
-	<button
-	 type="primary"
-	 bindtap="startRefresh"
-	 style="margin:30rpx auto;"
-	>开始刷新
-	</button>
-	<button type="primary" bindtap="stopRefresh">结束刷新</button>
-	<button
-	 type="primary"
-	 open-type="getUserInfo"
-	 bindgetuserinfo="handleGetUserInfos"
-	 style="margin:50rpx auto;"
-	>
-		获取用户权限信息二
-	</button>
-	<button type="primary">app.js全局属性</button>
-	<view>来自app.js全局属性：{{globalData.name}}</view>
-	<!-- 自定义模板 -->
-	<button type="primary">自定义模板</button>
-	<template is="msgItem" data="{{...item}}" />
-	<button type="primary">js保留两位小数{{ num }}</button>
-	<text>自定义wxs函数，wxs可以在页面直接调用, 解决页面不能用js函数问题</text>
-	<button type="warn">wxs中msg：{{info.msg}}</button>
-	<button type="primary">wxs中sum求和：{{info.sum(50, 60)}}</button>
-	<button>小程序常见事件</button>
-	<button
-	 type="primary"
-	 style="margin:30rpx auto;"
-	 data-str="{{'手指触摸动作开始'}}"
-	 bind:touchstart="hanldeTouchStart"
-	>
-		手指触摸动作开始
-	</button>
-	<button
-	 type="primary"
-	 style="margin:30rpx auto;"
-	 data-str="{{name}}"
-	 bind:tap="hanldeTouchTap"
-	>
-		手指触摸后马上离开
-	</button>
-	<button
-	 type="primary"
-	 style="margin:30rpx auto;"
-	 data-str="{{'手指触摸后，超过350ms再离开'}}"
-	 bind:longpress="hanldeLongPress"
-	>
-		手指触摸后，超过350ms再离开
-	</button>
-	<button style="margin:30rpx auto;">使用自定义组件,局部注册xxx.json和全局注册app.json</button>
-	<my-component></my-component>
-	<my-component></my-component>
-	<button style="margin:30rpx auto;">自定义组件传参和绑定组件内容默认数据</button>
-	<my-params name="父组件传递的数据222"></my-params>
-	<!-- 测试组件默认值 -->
-	<my-params></my-params>
-	<!-- 给子组件传递样式，需要在子组件和父组件里绑定 -->
-	<my-params titleclass="red"></my-params>
-	<!-- 自定义子组件向父组件传递事件 -->
-	<button type="primary" style="margin:30rpx auto;">子组件向父组件传递事件</button>
-	<text>点击子组件事件会变化的值：{{counter}}</text>
-	<my-event bind:add="handleAdd"></my-event>
-
-	<!-- 自定义tab-control组件 -->
-	<button type="primary" style="margin:30rpx auto;">自定义tab-control组件</button>
-	<tab-control titles="{{['流行','新款','时尚']}}" bind:itemclick="handleTabControlClick"></tab-control>
-	<button style="margin:30rpx auto;">{{tabTitle}}</button>
-
-	<!-- 父组件给子组件传递参数 -->
-	<button
-	 type="primary"
-	 style="margin:30rpx auto;"
-	 bind:tap="handleGiveValueToChild"
-	>
-		点击父组件给子组件传递参数
-	</button>
-	<my-select id="myselect"></my-select>
-	<!-- 多插槽使用记得使用name给插槽命名，然后在使用的时候用slot指定插槽名字即可  -->
-	<button
-	 type="primary"
-	 style="margin:30rpx auto;"
-	 bind:tap="handleGiveValueToChild"
-	>
-		插槽slot的使用
-	</button>
-	<my-slot>
-		<text >我是内容显示在插槽中</text>
-	</my-slot>
-	<my-slot>
-		<button type="primary">搜索按钮</button>
-		<button type="warn">搜索按钮</button>
-	</my-slot>
-	<!-- 组件也有生命周期和所在页面周期，参考my-params组件的js文件 -->
-
+    <text>pages/home/home.wxml</text>
+    <button type="primary">当前时间</button>
+    <button type="warn">{{currentTime}}</button>
+    <button type="primary">数据绑定</button>
+    <view>{{name}}</view>
+    <button type="primary">列表循环：</button>
+    <view wx:for="{{students}}" wx:key="index">姓名：{{item.name}} 年龄：{{item.age}}</view>
+    <button type="primary">事件绑定：</button>
+    <text>{{msg}} 计数值：{{count}}</text>
+    <button type="primary" bindtap="clickAddOne">+</button>
+    <button type="warn" bindtap="clickReduceOne">-</button>
+    <button type="primary" bindtap="startRefresh" style="margin:30rpx auto;">开始刷新</button>
+    <button type="primary" bindtap="stopRefresh">结束刷新</button>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfos" style="margin:50rpx auto;">
+        获取用户权限信息二
+    </button>
+    <button type="primary">app.js全局属性</button>
+    <view>来自app.js全局属性：{{globalData.name}}</view>
+    <!-- 自定义模板 -->
+    <button type="primary">自定义模板</button>
+    <template is="msgItem" data="{{...item}}" />
+    <button type="primary">js保留两位小数{{ num }}</button>
+    <text>自定义wxs函数，wxs可以在页面直接调用, 解决页面不能用js函数问题</text>
+    <button type="warn">wxs中msg：{{info.msg}}</button>
+    <button type="primary">wxs中sum求和：{{info.sum(50, 60)}}</button>
+    <button>小程序常见事件</button>
+    <button type="primary" style="margin:30rpx auto;" data-str="{{'手指触摸动作开始'}}" bind:touchstart="hanldeTouchStart">
+        手指触摸动作开始
+    </button>
+    <button type="primary" style="margin:30rpx auto;" data-str="{{name}}" bind:tap="hanldeTouchTap">
+        手指触摸后马上离开
+    </button>
+    <button type="primary" style="margin:30rpx auto;" data-str="{{'手指触摸后，超过350ms再离开'}}" bind:longpress="hanldeLongPress">
+        手指触摸后，超过350ms再离开
+    </button>
+    <button style="margin:30rpx auto;">使用自定义组件,局部注册xxx.json和全局注册app.json</button>
+    <my-component></my-component>
+    <my-component></my-component>
+    <button style="margin:30rpx auto;">自定义组件传参和绑定组件内容默认数据</button>
+    <my-params name="父组件传递的数据222"></my-params>
+    <!-- 测试组件默认值 -->
+    <my-params></my-params>
+    <!-- 给子组件传递样式，需要在子组件和父组件里绑定 -->
+    <my-params titleclass="red"></my-params>
+    <!-- 自定义子组件向父组件传递事件 -->
+    <button type="primary" style="margin:30rpx auto;">子组件向父组件传递事件</button>
+    <text>点击子组件事件会变化的值：{{counter}}</text>
+    <my-event bind:add="handleAdd"></my-event>
+    <!-- 自定义tab-control组件 -->
+    <button type="primary" style="margin:30rpx auto;">自定义tab-control组件</button>
+    <tab-control titles="{{['流行','新款','时尚']}}" bind:itemclick="handleTabControlClick"></tab-control>
+    <button style="margin:30rpx auto;">{{tabTitle}}</button>
+    <!-- 父组件给子组件传递参数 -->
+    <button type="primary" style="margin:30rpx auto;" bind:tap="handleGiveValueToChild">
+        点击父组件给子组件传递参数
+    </button>
+    <my-select id="myselect"></my-select>
+    <!-- 多插槽使用记得使用name给插槽命名，然后在使用的时候用slot指定插槽名字即可 -->
+    <button type="primary" style="margin:30rpx auto;" bind:tap="handleGiveValueToChild">
+        插槽slot的使用
+    </button>
+    <my-slot>
+        <text>我是内容显示在插槽中</text>
+    </my-slot>
+    <my-slot>
+        <button type="primary">搜索按钮</button>
+        <button type="warn">搜索按钮</button>
+    </my-slot>
+    <!-- 组件也有生命周期和所在页面周期，参考my-params组件的js文件 -->
+    <!-- 测试弹出使用 -->
+    <button type="primary" style="margin:30rpx auto;" data-num='{{1}}' bind:tap="handleShowToast">
+        showToast弹窗
+    </button>
+    <button type="primary" style="margin:30rpx auto;" data-num='{{0}}' bind:tap="handleShowToast">
+        showToast 加载弹窗
+    </button>
+    <button type="primary" style="margin:30rpx auto;" bind:tap="handleShowModal">
+        showModal 弹窗
+    </button>
+    <button type="primary" style="margin:30rpx auto;" bind:tap="handleShowLoading">
+        showLoading 弹窗
+    </button>
+    <button type="primary" style="margin:30rpx auto;" bind:tap="handleShowActionSheet">
+        ShowActionSheet 弹窗
+    </button>
 </view>
-

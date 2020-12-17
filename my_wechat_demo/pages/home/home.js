@@ -38,6 +38,72 @@ Page({
         addGlobalClass: true
     },
     /**
+     * @description  ShowActionSheet 弹窗
+     */
+    handleShowActionSheet(){
+        wx.showActionSheet({
+            itemList: ['相册', '拍照'],
+            success (res) {
+              console.log(res.tapIndex)
+              if (res.tapIndex) {
+                var CameraContext = wx.createCameraContext()
+                CameraContext.takePhoto({
+                    success:function(res){
+                        console.log(res,'拍照成功')
+                    },
+                    fail:function(err){
+                        console.log(err,'拍照失败')
+                    }
+                })
+              }
+            },
+            fail (res) {
+              console.log(res.errMsg)
+            }
+          })
+    },
+    /**
+     * @description ShowLoading 弹窗
+     */
+    handleShowLoading(){
+        wx.showLoading({
+          title: '加载...',
+        })
+
+        setTimeout(function () {
+            wx.hideLoading()
+        }, 2000)
+    },
+    /**
+     * @description showModal 弹窗
+     * @param {*} item 
+     */
+    handleShowModal(item){
+        wx.showModal({
+            title: '我是提示',
+            content: '我是内容部分哈哈哈',
+            success (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+        })
+    },
+    /**
+     * @description ShowToast 弹窗
+     */
+    handleShowToast(item){
+        console.log(item)
+        wx.showToast({
+          title: '我是ShowToast弹窗',
+          duration: 3000,
+          mask: true,
+          icon: item.currentTarget.dataset.num ? 'success' : 'loading'
+        })
+    },
+    /**
      * @description 自定义tab-control组件事件传递
      */
     handleTabControlClick (event) { 
@@ -68,7 +134,7 @@ Page({
                 console.log('用户点击取消')
               }
             }
-          })
+        })
     },
     /**
      * @description 父组件给子组件传值方法
@@ -152,7 +218,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
     onLoad: function (options) {
-        // 发起数据请求，域名或接口ip必须进行配置，否则报错
+        // 1、发起数据请求，域名或接口ip必须进行配置，否则报错
         // wx.request({
         //     url: 'http://123.207.32.32:8000/recommend',
         //     method: 'get',
@@ -160,34 +226,40 @@ Page({
         //         console.log('网络请求结果',res);
         //     }
         // })
-        wx.request({
+
+
+        // 2、 http://httpbin.org/post 模拟请求地址，可以传参测试请求方式是否正确
+        // wx.request({
+        //     url: 'http://httpbin.org/post',
+        //     method: 'post',
+        //     data: {
+        //         name: '邱南亚',
+        //         age: 154,
+        //         height: 152
+        //     },
+        //     success:function (res) {
+        //         console.log('网络请求结果',res);
+        //     },
+        //     fail:function (res){
+        //         console.log(res)
+        //     }
+        // })
+
+        // 3、 使用自己封装好的方法进行调用
+        //  Promise 最大的好处就是防止出现回调地狱
+        request({
             url: 'http://httpbin.org/post',
-            method: 'post',
             data: {
                 name: '邱南亚',
                 age: 154,
                 height: 152
             },
-            success:function (res) {
-                console.log('网络请求结果',res);
-            },
-            fail:function (res){
-                console.log(res)
-            }
-            
+            method: 'post'
+        }).then(res =>{
+            console.log(res,111)
+        }).catch(err =>{
+            console.log(err, 222)
         })
-
-        // 使用自己封装好的方法进行调用
-        let obj = {
-            url:'http://httpbin.org/post',
-            method: 'post',
-            data:{
-                name: '邱南亚',
-                age: 154,
-                height: 152
-            }
-        }
-        request(obj)    
 
     // 使用自定义方法，保留两位小数
     this.setData({num: utils.twoDecimal(this.data.num)})
