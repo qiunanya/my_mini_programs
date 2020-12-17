@@ -92,6 +92,22 @@
 		点击父组件给子组件传递参数
 	</button>
 	<my-select id="myselect"></my-select>
+	<!-- 多插槽使用记得使用name给插槽命名，然后在使用的时候用slot指定插槽名字即可  -->
+	<button
+	 type="primary"
+	 style="margin:30rpx auto;"
+	 bind:tap="handleGiveValueToChild"
+	>
+		插槽slot的使用
+	</button>
+	<my-slot>
+		<text >我是内容显示在插槽中</text>
+	</my-slot>
+	<my-slot>
+		<button type="primary">搜索按钮</button>
+		<button type="warn">搜索按钮</button>
+	</my-slot>
+	<!-- 组件也有生命周期和所在页面周期，参考my-params组件的js文件 -->
 
 </view>
 

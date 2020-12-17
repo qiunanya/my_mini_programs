@@ -3,7 +3,8 @@
      "my-params":"../../components/my-params/my-params",
      "my-event":"../../components/my-event/my-event",
      "tab-control": "../../components/tab-control/tab-control",
-     "my-select":"../../components/my-select/my-select"
+     "my-select":"../../components/my-select/my-select",
+     "my-slot": "../../components/my-slot/my-slot"
   },
   "enablePullDownRefresh": true
 }

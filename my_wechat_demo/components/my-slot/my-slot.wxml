@@ -1,0 +1,6 @@
+<!--components/my-slot/my-slot.wxml-->
+<view>我是组件头部</view>
+<!-- 预留插槽 -->
+<slot></slot>
+<view>我是组件底部</view>
+
