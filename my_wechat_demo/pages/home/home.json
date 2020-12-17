@@ -2,7 +2,8 @@
   "usingComponents": {
      "my-params":"../../components/my-params/my-params",
      "my-event":"../../components/my-event/my-event",
-     "tab-control": "../../components/tab-control/tab-control"
+     "tab-control": "../../components/tab-control/tab-control",
+     "my-select":"../../components/my-select/my-select"
   },
   "enablePullDownRefresh": true
 }

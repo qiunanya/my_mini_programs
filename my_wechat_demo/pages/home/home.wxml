@@ -82,5 +82,16 @@
 	<button type="primary" style="margin:30rpx auto;">自定义tab-control组件</button>
 	<tab-control titles="{{['流行','新款','时尚']}}" bind:itemclick="handleTabControlClick"></tab-control>
 	<button style="margin:30rpx auto;">{{tabTitle}}</button>
+
+	<!-- 父组件给子组件传递参数 -->
+	<button
+	 type="primary"
+	 style="margin:30rpx auto;"
+	 bind:tap="handleGiveValueToChild"
+	>
+		点击父组件给子组件传递参数
+	</button>
+	<my-select id="myselect"></my-select>
+
 </view>
 
