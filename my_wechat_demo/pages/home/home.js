@@ -30,10 +30,20 @@ Page({
         },
         currentTime: new Date().toLocaleString(),
         num: 2.5555555555,
-        counter: 0
+        counter: 0,
+        tabTitle: ''
     },
     options: {
         addGlobalClass: true
+    },
+    /**
+     * @description 自定义tab-control组件事件传递
+     */
+    handleTabControlClick (event) { 
+        this.setData({
+            tabTitle: event.detail.title
+        })
+        console.log(event);
     },
     /**
      * @description 监听子组件传出的事件并赋值
