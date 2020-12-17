@@ -5,6 +5,7 @@ const app = getApp()
 const utils = require("../../utils/util.js");
 let { name, age } = app.globalData
 console.log('全局属性', name, age);
+import request from '../../requests/network.js'
 Page({
   /**
    * 页面的初始数据
@@ -150,7 +151,44 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+    onLoad: function (options) {
+        // 发起数据请求，域名或接口ip必须进行配置，否则报错
+        // wx.request({
+        //     url: 'http://123.207.32.32:8000/recommend',
+        //     method: 'get',
+        //     success:function (res) {
+        //         console.log('网络请求结果',res);
+        //     }
+        // })
+        wx.request({
+            url: 'http://httpbin.org/post',
+            method: 'post',
+            data: {
+                name: '邱南亚',
+                age: 154,
+                height: 152
+            },
+            success:function (res) {
+                console.log('网络请求结果',res);
+            },
+            fail:function (res){
+                console.log(res)
+            }
+            
+        })
+
+        // 使用自己封装好的方法进行调用
+        let obj = {
+            url:'http://httpbin.org/post',
+            method: 'post',
+            data:{
+                name: '邱南亚',
+                age: 154,
+                height: 152
+            }
+        }
+        request(obj)    
+
     // 使用自定义方法，保留两位小数
     this.setData({num: utils.twoDecimal(this.data.num)})
     // 赋值动态显示时间
