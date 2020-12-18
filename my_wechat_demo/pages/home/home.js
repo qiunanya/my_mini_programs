@@ -32,30 +32,46 @@ Page({
         currentTime: new Date().toLocaleString(),
         num: 2.5555555555,
         counter: 0,
-        tabTitle: ''
+        tabTitle: '',
+        imgUrl: [],
     },
     options: {
         addGlobalClass: true
     },
     /**
+     * @description 图片预览方法
+     */
+    handlePriviewImg(item){
+        console.log(item,this.data.imgUrl,555555)
+        wx.previewImage({
+            current: item.currentTarget.dataset.index, // 当前显示图片的http链接
+            urls: this.data.imgUrl // 需要预览的图片http链接列表
+        })
+    },
+    /**
      * @description  ShowActionSheet 弹窗
      */
     handleShowActionSheet(){
+        let that = this
         wx.showActionSheet({
             itemList: ['相册', '拍照'],
             success (res) {
-              console.log(res.tapIndex)
-              if (res.tapIndex) {
-                var CameraContext = wx.createCameraContext()
-                CameraContext.takePhoto({
-                    success:function(res){
-                        console.log(res,'拍照成功')
-                    },
-                    fail:function(err){
-                        console.log(err,'拍照失败')
+                console.log(res.tapIndex)
+                // 建立临时数组，然后根据类型取值，拍照或者相册
+                const type = ['album', 'camera']
+                wx.chooseImage({
+                    count: 9,
+                    sizeType: ['original', 'compressed'],
+                    sourceType: [type[res.tapIndex]],
+                    success (res) {
+                        // tempFilePath可以作为img标签的src属性显示图片
+                        const tempFilePaths = res.tempFilePaths
+                        that.setData({
+                            imgUrl: tempFilePaths
+                        })
+                        console.log(tempFilePaths, '临时图片路径')
                     }
                 })
-              }
             },
             fail (res) {
               console.log(res.errMsg)

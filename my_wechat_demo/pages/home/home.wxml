@@ -89,4 +89,9 @@
     <button type="primary" style="margin:30rpx auto;" bind:tap="handleShowActionSheet">
         ShowActionSheet 弹窗
     </button>
+    <view class="image_list">
+        <block wx:for="{{imgUrl}}" wx:key="index">
+            <image class="img" src="{{ item }}" data-index="{{index}}" bind:tap="handlePriviewImg"></image>
+        </block>
+    </view>
 </view>

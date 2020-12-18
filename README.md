@@ -1,5 +1,7 @@
 # my_mini_programs
 
+### 2020-12-18 图片上传wx.chooseImage和预览wx.previewImage
+
 ### 2020-12-18 全局统一封装请求方式和弹窗使用
 
 ### 2020-12-17 slot使用和组件也有生命周期和所在页面周期，参考my-params组件的js文件，多插槽使用记得使用name给插槽命名，然后在使用的时候用slot指定插槽名字即可
