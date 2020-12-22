@@ -94,4 +94,12 @@
             <image class="img" src="{{ item }}" data-index="{{index}}" bind:tap="handlePriviewImg"></image>
         </block>
     </view>
+    <!-- 小程序分享按钮 -->
+    <button type="primary" style="margin:30rpx auto;" open-type="share">小程序分享按钮</button>
+    <!-- 页面跳转方式一 菜单页面不能跳转，这是坑-->
+    <navigator url="/pages/detail/detail">页面跳转方式一navigater组件</navigator>
+    <!-- 页面跳转方式二wx.navigateTo -->
+    <button type="primary" style="margin:30rpx auto;" >
+        页面跳转方式二wx.navigateTo
+    </button>
 </view>

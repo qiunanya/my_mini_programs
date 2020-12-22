@@ -333,6 +333,20 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  }
+     return{
+         title: '物灵鸿图',
+         path: "/pages/category/category",
+         imageUrl:'/assets/tabbar/category.png'
+     }
+  },
+   /**
+    * @description 分享朋友圈
+    */
+	onShareTimeline() {
+        return {
+            title: '物灵鸿图',
+            path: '/pages/home/home.wxml',
+            imageUrl: '/assets/tabbar/category_active.png' //可以本地也可以线上
+        }
+    }    
 })
