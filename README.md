@@ -1,5 +1,7 @@
 # my_mini_programs
 
+### 2020-12-22 小程序登录流程和页面跳转
+
 ### 2020-12-18 图片上传wx.chooseImage和预览wx.previewImage
 
 ### 2020-12-18 全局统一封装请求方式和弹窗使用
